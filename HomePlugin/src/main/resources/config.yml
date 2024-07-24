@@ -1,0 +1,18 @@
+cooldown: 60 # Tempo de cooldown entre usos do comando /home, em segundos.
+countdown_time: 3 # Tempo de contagem regressiva exibido ao jogador antes do teletransporte, em segundos.
+show_particles: true # Se deve exibir partículas ao teleportar. Defina como 'true' para exibir partículas ou 'false' para não exibir.
+
+# Configurações do banco de dados MySQL.
+database:
+  url: jdbc:mysql://mysql:3306/minecraft
+  user: exhost
+  password: exhost
+
+# Mensagens enviadas ao jogador.
+messages:
+  teleport_cancelled: "Teletransporte cancelado porque você se moveu."
+  teleporting: "TELETRANSPORTANDO em {time}..."
+  no_home_set: "Você não tem uma home definida."
+  home_set: "Home definida com sucesso!"
+  teleport_success: "Teletransportado para a home."
+  cooldown_wait: "Você deve esperar {time} segundos antes de usar esse comando novamente."

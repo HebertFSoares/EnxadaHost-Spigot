@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: minecraft
+      MYSQL_USER: exhost
+      MYSQL_PASSWORD: exhost
+    ports:
+      - "3306:3306"
+    networks:
+      - minecraft-network
+
+  minecraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minecraft-server-homeplugin
+    ports:
+      - "25565:25565"
+    volumes:
+      - minecraft_data:/app
+    environment:
+      EULA: "true"
+    depends_on:
+      - mysql
+    networks:
+      - minecraft-network
+
+volumes:
+  minecraft_data:
+
+networks:
+  minecraft-network:
+    driver: bridge

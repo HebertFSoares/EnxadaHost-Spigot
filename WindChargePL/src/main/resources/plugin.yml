@@ -1,0 +1,4 @@
+name: WindChargePL
+version: '1.0-SNAPSHOT'
+main: br.github.hebertfsoares.windChargePL.WindCharge
+api-version: '1.21'

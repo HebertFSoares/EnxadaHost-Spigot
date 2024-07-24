@@ -1,0 +1,3 @@
+explosion_strength: 4  # Força da explosão
+show_particles: true  # Adicionar partículas
+projectile_speed: 1.0  # Velocidade do projétil

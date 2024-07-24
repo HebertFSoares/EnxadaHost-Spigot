@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group 'br.github.hebertfsoares'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '21'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveBaseName.set('WindCharge')
+    archiveVersion.set('1.0-SNAPSHOT')
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    manifest {
+        attributes(
+                'Main-Class': 'br.github.hebertfsoares.windChargePL.WindCharge'
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Add this line
+}
+
+processResources {
+    filesMatching('**/plugin.yml') {
+        expand project: project
+    }
+}

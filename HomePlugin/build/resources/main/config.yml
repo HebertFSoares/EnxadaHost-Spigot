@@ -1,0 +1,14 @@
+cooldown: 60
+countdown_time: 3
+show_particles: true
+database:
+  url: jdbc:mysql://mysql:3307/minecraft
+  user: exhost
+  password: exhost
+messages:
+  teleport_cancelled: "Teletransporte cancelado porque você se moveu."
+  teleporting: "TELETRANSPORTANDO em {time}..."
+  no_home_set: "Você não tem uma home definida."
+  home_set: "Home definida com sucesso!"
+  teleport_success: "Teletransportado para a home."
+  cooldown_wait: "Você deve esperar {time} segundos antes de usar esse comando novamente."

@@ -1,0 +1,9 @@
+name: Homeplugin
+version: '1.0-SNAPSHOT'
+main: br.github.hebertfsoares.homeplugin.Homeplugin
+api-version: '1.21'
+commands:
+  sethome:
+    description: Define uma home
+  home:
+    description: Teleporta para a home
